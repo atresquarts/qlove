@@ -1,0 +1,5 @@
+.color-wheel {
+  cursor: crosshair;
+  border-radius: 50%;
+  box-shadow: var(--shadow-md);
+}

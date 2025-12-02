@@ -1,0 +1,133 @@
+.canvas {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  background: var(--color-bg-primary);
+  overflow: hidden;
+  cursor: grab;
+}
+
+.canvas.panning {
+  cursor: grabbing;
+}
+
+.canvas-content {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 2000px;
+  height: 2000px;
+  transform-origin: 0 0;
+  transition: transform 0.05s ease-out;
+  pointer-events: none;
+}
+
+.canvas-grid {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-image: 
+    linear-gradient(var(--color-border-primary) 1px, transparent 1px),
+    linear-gradient(90deg, var(--color-border-primary) 1px, transparent 1px);
+  background-size: 50px 50px;
+  opacity: 0.3;
+}
+
+.canvas-controls {
+  position: absolute;
+  bottom: var(--space-lg);
+  right: var(--space-lg);
+  display: flex;
+  align-items: center;
+  gap: var(--space-md);
+  padding: var(--space-sm) var(--space-md);
+  background: rgba(26, 26, 36, 0.95);
+  backdrop-filter: blur(12px);
+  border: 1px solid var(--color-border-primary);
+  border-radius: var(--radius-lg);
+  pointer-events: all;
+  z-index: 10;
+}
+
+.canvas-control-group {
+  display: flex;
+  align-items: center;
+  gap: var(--space-sm);
+}
+
+.canvas-control-label {
+  font-size: 0.75rem;
+  font-weight: 500;
+  color: var(--color-text-secondary);
+  white-space: nowrap;
+}
+
+.canvas-zoom-slider {
+  width: 120px;
+  height: 4px;
+  -webkit-appearance: none;
+  appearance: none;
+  background: var(--color-bg-secondary);
+  border-radius: var(--radius-full);
+  outline: none;
+  cursor: pointer;
+}
+
+.canvas-zoom-slider::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  appearance: none;
+  width: 14px;
+  height: 14px;
+  background: var(--color-accent-primary);
+  border-radius: 50%;
+  cursor: pointer;
+  transition: all var(--transition-fast);
+}
+
+.canvas-zoom-slider::-moz-range-thumb {
+  width: 14px;
+  height: 14px;
+  background: var(--color-accent-primary);
+  border: none;
+  border-radius: 50%;
+  cursor: pointer;
+  transition: all var(--transition-fast);
+}
+
+.canvas-zoom-slider::-webkit-slider-thumb:hover {
+  transform: scale(1.15);
+  box-shadow: 0 0 8px rgba(99, 102, 241, 0.5);
+}
+
+.canvas-zoom-slider::-moz-range-thumb:hover {
+  transform: scale(1.15);
+  box-shadow: 0 0 8px rgba(99, 102, 241, 0.5);
+}
+
+.canvas-center-btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 32px;
+  height: 32px;
+  padding: 0;
+  background: var(--color-bg-secondary);
+  border: 1px solid var(--color-border-primary);
+  border-radius: var(--radius-md);
+  color: var(--color-text-secondary);
+  cursor: pointer;
+  transition: all var(--transition-fast);
+}
+
+.canvas-center-btn:hover {
+  background: var(--color-bg-tertiary);
+  border-color: var(--color-accent-primary);
+  color: var(--color-accent-primary);
+  transform: scale(1.05);
+}
+
+.canvas-center-btn:active {
+  transform: scale(0.95);
+}

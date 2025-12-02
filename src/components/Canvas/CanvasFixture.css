@@ -1,0 +1,96 @@
+.canvas-fixture {
+  position: absolute;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: var(--space-xs);
+  cursor: grab;
+  pointer-events: all;
+  user-select: none;
+  transform: translate(-50%, -50%);
+  transition: all var(--transition-fast);
+}
+
+.canvas-fixture.dragging {
+  cursor: grabbing;
+  z-index: 100;
+}
+
+.canvas-fixture:hover {
+  transform: translate(-50%, -50%) scale(1.05);
+}
+
+.canvas-fixture-icon {
+  position: relative;
+  width: 48px;
+  height: 48px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: var(--radius-lg);
+  color: white;
+  transition: all var(--transition-fast);
+  z-index: 2;
+}
+
+/* Off state - dark appearance */
+.canvas-fixture.off .canvas-fixture-icon {
+  background: linear-gradient(135deg, #2a2a3a, #1a1a24);
+  box-shadow: var(--shadow-sm);
+  opacity: 0.6;
+}
+
+/* On state - colored with glow */
+.canvas-fixture.on .canvas-fixture-icon {
+  background: var(--fixture-color);
+  box-shadow: 
+    var(--shadow-md),
+    0 0 20px var(--fixture-color),
+    0 0 40px var(--fixture-color);
+}
+
+/* Selected state */
+.canvas-fixture.selected .canvas-fixture-icon {
+  box-shadow: 
+    var(--shadow-lg),
+    0 0 20px var(--fixture-color),
+    0 0 40px var(--fixture-color),
+    0 0 0 3px rgba(236, 72, 153, 0.5);
+}
+
+/* Selected + Off state */
+.canvas-fixture.selected.off .canvas-fixture-icon {
+  box-shadow: 
+    var(--shadow-lg),
+    0 0 0 3px rgba(236, 72, 153, 0.5);
+}
+
+.canvas-fixture:hover .canvas-fixture-icon {
+  transform: scale(1.05);
+}
+
+.canvas-fixture-label {
+  padding: var(--space-xs) var(--space-sm);
+  background: rgba(26, 26, 36, 0.95);
+  backdrop-filter: blur(8px);
+  border: 1px solid var(--color-border-primary);
+  border-radius: var(--radius-md);
+  font-size: 0.75rem;
+  font-weight: 500;
+  color: var(--color-text-primary);
+  white-space: nowrap;
+  max-width: 150px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  box-shadow: var(--shadow-sm);
+  transition: all var(--transition-fast);
+}
+
+.canvas-fixture.selected .canvas-fixture-label {
+  border-color: var(--color-fixture-selected);
+  color: var(--color-fixture-selected);
+}
+
+.canvas-fixture.off .canvas-fixture-label {
+  opacity: 0.6;
+}

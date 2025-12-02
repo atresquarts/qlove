@@ -1,0 +1,46 @@
+.attribute-switch-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.5rem;
+  width: 100%;
+  height: 100%;
+  justify-content: center;
+}
+
+.attribute-switch {
+  width: 50px;
+  height: 28px;
+  border-radius: 14px;
+  background-color: #333;
+  border: none;
+  position: relative;
+  cursor: pointer;
+  transition: background-color 0.2s;
+  padding: 2px;
+}
+
+.attribute-switch.on {
+  background-color: var(--primary-color);
+}
+
+.switch-handle {
+  width: 24px;
+  height: 24px;
+  background-color: white;
+  border-radius: 50%;
+  position: absolute;
+  top: 2px;
+  left: 2px;
+  transition: transform 0.2s cubic-bezier(0.4, 0.0, 0.2, 1);
+  box-shadow: 0 2px 4px rgba(0,0,0,0.2);
+}
+
+.attribute-switch.on .switch-handle {
+  transform: translateX(22px);
+}
+
+.attribute-switch:focus-visible {
+  outline: 2px solid var(--primary-color);
+  outline-offset: 2px;
+}

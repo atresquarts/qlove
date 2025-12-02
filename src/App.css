@@ -1,0 +1,106 @@
+.app {
+  width: 100%;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+}
+
+.app-main {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+}
+
+.workspace-area {
+  flex: 1;
+  display: flex;
+  overflow: hidden;
+  position: relative;
+}
+
+.layers-popover-container {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  width: 300px;
+  height: calc(100% - 20px);
+  background: var(--color-bg-secondary);
+  border: 1px solid var(--color-border-primary);
+  border-radius: var(--radius-md);
+  box-shadow: var(--shadow-lg);
+  z-index: 1000;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  animation: slide-in-right 0.2s ease-out;
+}
+
+@keyframes slide-in-right {
+  from {
+    opacity: 0;
+    transform: translateX(10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+/* Resize Handle */
+.resize-handle-horizontal {
+  height: 8px;
+  background: var(--color-bg-secondary);
+  border-top: 1px solid var(--color-border-primary);
+  border-bottom: 1px solid var(--color-border-primary);
+  cursor: ns-resize;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  transition: background-color 0.2s ease;
+  user-select: none;
+  z-index: 10;
+}
+
+.resize-handle-horizontal:hover {
+  background: var(--color-bg-elevated);
+}
+
+.resize-handle-horizontal:hover .resize-handle-line {
+  background: var(--color-accent-primary);
+  width: 60px;
+}
+
+.resize-handle-line {
+  width: 40px;
+  height: 3px;
+  background: var(--color-border-primary);
+  border-radius: 2px;
+  transition: all 0.2s ease;
+}
+
+.properties-toggle-tab {
+  position: absolute;
+  left: 0px;
+  width: 32px;
+  height: 24px;
+  background: var(--color-bg-secondary);
+  border: 1px solid var(--color-border-primary);
+  border-bottom: none;
+  border-radius: 6px 6px 0 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  z-index: 1000;
+  color: var(--color-text-secondary);
+  transition: all 0.2s ease, bottom 0.3s ease;
+  box-shadow: 0 -2px 4px rgba(0, 0, 0, 0.05);
+}
+
+.properties-toggle-tab:hover {
+  background: var(--color-bg-elevated);
+  color: var(--color-text-primary);
+}

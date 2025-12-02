@@ -1,0 +1,195 @@
+.import-modal {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-lg);
+}
+
+.import-tabs {
+  display: flex;
+  gap: var(--space-sm);
+  border-bottom: 1px solid var(--color-border-primary);
+  padding-bottom: var(--space-xs);
+}
+
+.import-tab {
+  display: flex;
+  align-items: center;
+  gap: var(--space-xs);
+  padding: var(--space-sm) var(--space-md);
+  background: transparent;
+  border: none;
+  border-radius: var(--radius-md);
+  color: var(--color-text-tertiary);
+  font-size: 0.875rem;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all var(--transition-fast);
+}
+
+.import-tab:hover {
+  background: var(--color-bg-tertiary);
+  color: var(--color-text-secondary);
+}
+
+.import-tab.active {
+  background: var(--color-bg-elevated);
+  color: var(--color-accent-primary);
+}
+
+.import-section {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-sm);
+}
+
+.import-label {
+  font-size: 0.875rem;
+  font-weight: 500;
+  color: var(--color-text-secondary);
+}
+
+.import-textarea {
+  width: 100%;
+  padding: var(--space-md);
+  background: var(--color-bg-tertiary);
+  border: 1px solid var(--color-border-primary);
+  border-radius: var(--radius-md);
+  color: var(--color-text-primary);
+  font-family: var(--font-mono);
+  font-size: 0.875rem;
+  resize: vertical;
+  min-height: 200px;
+}
+
+.import-textarea:focus {
+  outline: none;
+  border-color: var(--color-accent-primary);
+  box-shadow: 0 0 0 2px var(--color-accent-primary-dim);
+}
+
+.import-textarea::placeholder {
+  color: var(--color-text-muted);
+}
+
+.import-error {
+  color: var(--color-accent-danger);
+  font-size: 0.875rem;
+  padding: var(--space-sm);
+  background: var(--color-accent-danger-dim);
+  border-radius: var(--radius-sm);
+}
+
+.import-preview {
+  background: var(--color-bg-tertiary);
+  border: 1px solid var(--color-border-primary);
+  border-radius: var(--radius-md);
+  padding: var(--space-md);
+}
+
+.import-preview-title {
+  font-size: 0.875rem;
+  font-weight: 600;
+  color: var(--color-text-secondary);
+  margin: 0 0 var(--space-md) 0;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+.import-preview-content {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-sm);
+}
+
+.import-preview-item {
+  font-size: 0.875rem;
+  color: var(--color-text-primary);
+}
+
+.import-preview-item strong {
+  color: var(--color-text-secondary);
+  margin-right: var(--space-sm);
+}
+
+.import-preview-attributes {
+  margin-top: var(--space-xs);
+  padding-left: var(--space-md);
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+  gap: var(--space-xs);
+}
+
+.import-preview-attr {
+  font-family: var(--font-mono);
+  font-size: 0.75rem;
+  color: var(--color-text-muted);
+}
+
+.import-actions {
+  display: flex;
+  gap: var(--space-sm);
+  justify-content: flex-end;
+  padding-top: var(--space-md);
+  border-top: 1px solid var(--color-border-primary);
+}
+
+/* Upload Area Styles */
+.import-upload-area {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: var(--space-xl);
+  border: 2px dashed var(--color-border-secondary);
+  border-radius: var(--radius-lg);
+  background: var(--color-bg-tertiary);
+  cursor: pointer;
+  transition: all var(--transition-fast);
+  min-height: 200px;
+}
+
+.import-upload-area:hover {
+  border-color: var(--color-accent-primary);
+  background: var(--color-bg-elevated);
+}
+
+.import-upload-icon {
+  color: var(--color-text-tertiary);
+  margin-bottom: var(--space-md);
+  transition: color var(--transition-fast);
+}
+
+.import-upload-area:hover .import-upload-icon {
+  color: var(--color-accent-primary);
+}
+
+.import-upload-area h3 {
+  margin: 0 0 var(--space-xs) 0;
+  color: var(--color-text-primary);
+  font-size: 1.125rem;
+}
+
+.import-error-box,
+.import-success-box {
+  display: flex;
+  align-items: center;
+  gap: var(--space-sm);
+  padding: var(--space-md);
+  border-radius: var(--radius-md);
+  font-size: 0.875rem;
+}
+
+.import-error-box {
+  background: var(--color-accent-danger-dim);
+  color: var(--color-accent-danger);
+}
+
+.import-success-box {
+  background: var(--color-accent-success-dim);
+  color: var(--color-accent-success);
+}
+
+.import-info {
+  text-align: center;
+  padding: var(--space-sm);
+}

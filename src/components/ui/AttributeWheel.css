@@ -1,0 +1,55 @@
+.attribute-wheel-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.5rem;
+  width: 100%;
+  height: 100%;
+  justify-content: center;
+  user-select: none;
+}
+
+.attribute-wheel {
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  background: conic-gradient(from 180deg, #333 0%, #1a1a1a 100%);
+  border: 2px solid #444;
+  position: relative;
+  cursor: ns-resize;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
+  transition: box-shadow 0.2s;
+}
+
+.attribute-wheel:hover {
+  box-shadow: 0 0 0 2px var(--primary-color);
+  border-color: var(--primary-color);
+}
+
+.wheel-marker {
+  position: absolute;
+  top: 5px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 4px;
+  height: 8px;
+  background-color: var(--primary-color);
+  border-radius: 2px;
+}
+
+.attribute-label {
+  font-size: 0.75rem;
+  color: var(--text-secondary);
+  text-align: center;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  max-width: 100%;
+}
+
+.attribute-value {
+  font-size: 0.875rem;
+  font-weight: 500;
+  color: var(--text-primary);
+  font-variant-numeric: tabular-nums;
+}
